@@ -11,6 +11,7 @@ Assuming python is setup on your machine:
 Run command:
 
 > databricks configure
+
 provide your credentials
 
 Creating community edition cluster from command line . creates cluster with latest spark and python 3 version.
