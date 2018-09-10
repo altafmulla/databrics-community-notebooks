@@ -22,8 +22,11 @@ Thsi will return a json response with a cluster-id(your-cluster-id): Use this cl
 To get some of the libraries used in the tutarilas pre-loaded, run the follwing coammnds
 
 > databricks libraries install --cluster-id your-cluster-id --pypi-package bokeh
+
 > databricks libraries install --cluster-id your-cluster-id --pypi-package nsepy
+
 > databricks libraries install --cluster-id your-cluster-id --pypi-package plotly
+
 > databricks libraries install --cluster-id your-cluster-id --pypi-package quandl
 
 Workspace > import> files
