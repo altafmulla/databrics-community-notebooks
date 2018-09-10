@@ -5,6 +5,7 @@ create community edition account at https://community.cloud.databricks.com/
 
 Assuming python is setup on your machine:
 pip install databricks-cli
+
 Run command:
 databricks configure
 provide your credentials
