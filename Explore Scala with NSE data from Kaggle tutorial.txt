@@ -1,0 +1,33 @@
+In this tutorial we will explore large datasets for NSE Data
+Download the kaggle dataset from https://www.kaggle.com/abhishekyana/nse-listed-1384-companies-data/version/2
+Explode the zip and sort by size. delete css less than 5 kb. These are mostly erroneous files or tickers which are no longer valid.
+Assuming databricks cli is installed,(Read Readme for details)
+From command prompt or terminal
+cd nse-listed-1384-companies-data
+dbfs cp -r ./HISTORICAL_DATA  dbfs:/FileStore/tables/nse_full
+
+The command will recursively upload all files from your local to the above location. 
+Will take some time to upload. If you get connection timeouts rerun command, it will skip already uploaded files.
+After all files are uploaded, follow multiplecsvmerge.ipnyb instructions
+which will create the merge css under /dbfs/FileStore/tables/allnsedata/nsecombinedall.csv
+
+
+under your account click, Data> Add Data>Create New Table> DBFS (Tab)>
+navigate in Select a file from DBFS pane to  and select file : FileStore/tables/allnsedata/nsecombinedall.csv
+click Create table with UI option, attach to the running cluster
+preview table
+Table name:nsecombinedall
+click options
+First row is header
+Infer schema
+verify data types and column names in preview pane and click Create Table.
+
+Recommend to complete "Apache Spark on Databricks for Data Scientists" tutorial by Databricks first.
+import the note book in workspace
+https://docs.databricks.com/_static/notebooks/databricks-for-data-scientists.html
+and run through the steps.
+
+Next:
+import the scala ScalaPythonFinancewithPlotlyBokeh.scala file and run some transformations.
+Note this is just a superficial exploration and also demonstrates conversion of scale datasets to python.
+Needs more transformations for true scala usage.
